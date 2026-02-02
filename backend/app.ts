@@ -49,6 +49,10 @@ export const createApp = () => {
 
   app.use(authRouter);
 
+  app.get("/", (_req, res) => {
+    res.json({ ok: true, service: "auth-backend" });
+  });
+
   app.get("/health", (_req, res) => {
     res.json({ ok: true });
   });
